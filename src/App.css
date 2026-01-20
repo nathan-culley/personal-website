@@ -1,0 +1,252 @@
+/* Layout */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.main {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.01em;
+}
+
+.divider {
+  margin: 0 var(--space-xs);
+  color: var(--color-text-tertiary);
+}
+
+.bio {
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Social Links Section */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-link-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(37, 99, 235, 0.03),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.link:hover::before {
+  left: 100%;
+}
+
+.link:hover {
+  background-color: var(--color-link-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.link:active {
+  transform: translateY(0);
+}
+
+.link-primary {
+  border-width: 2px;
+  border-color: var(--color-accent);
+  background: linear-gradient(
+    135deg,
+    var(--color-link-bg) 0%,
+    rgba(37, 99, 235, 0.02) 100%
+  );
+}
+
+.link-primary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-link-hover) 0%,
+    rgba(37, 99, 235, 0.05) 100%
+  );
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+}
+
+.link-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.link:hover .link-icon {
+  color: var(--color-accent);
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.link-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.link-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.link-description {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link-arrow {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-tertiary);
+  transition: all var(--transition-fast);
+}
+
+.link:hover .link-arrow {
+  color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding-top: var(--space-xl);
+  margin-top: auto;
+}
+
+.footer p {
+  font-size: 0.875rem;
+  color: var(--color-text-tertiary);
+  font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: var(--space-md);
+  }
+
+  .main {
+    gap: var(--space-2xl);
+  }
+
+  .hero {
+    gap: var(--space-sm);
+  }
+
+  .link {
+    padding: var(--space-md);
+  }
+
+  .link-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .link-arrow {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .link-icon,
+  .link-arrow,
+  .link::before {
+    transition: none;
+  }
+
+  .link:hover {
+    transform: none;
+  }
+
+  .link:hover .link-arrow {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .link {
+    border-width: 2px;
+  }
+
+  .link:hover {
+    border-width: 3px;
+  }
+}
