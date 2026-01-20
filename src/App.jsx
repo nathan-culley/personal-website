@@ -32,7 +32,7 @@ function App() {
   const socialLinks = [
     {
       name: 'Blog',
-      href: 'https://blog.nathanculley.com',
+      href: 'https://nathanculley.substack.com',
       icon: SubstackIcon,
       description: 'Read my writing on Substack',
       primary: true
