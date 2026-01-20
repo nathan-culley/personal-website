@@ -45,14 +45,14 @@ function App() {
       primary: false
     },
     {
-      name: 'Instagram',
+      name: 'Personal Instagram',
       href: 'https://instagram.com/_nathanculley_',
       icon: InstagramIcon,
       description: '@_nathanculley_',
       primary: false
     },
     {
-      name: 'Photography',
+      name: 'Photography Instagram',
       href: 'https://instagram.com/aion_imagery',
       icon: InstagramIcon,
       description: '@aion_imagery',
@@ -73,11 +73,8 @@ function App() {
         {/* Hero Section */}
         <section className="hero">
           <h1 className="title">Nathan Culley</h1>
-          <p className="subtitle">
-            Firefighter-Paramedic<span className="divider">·</span>Writer<span className="divider">·</span>Creator
-          </p>
           <p className="bio">
-            Based in Lexington, Kentucky. I write about emergency services, life, and the things that catch my attention.
+            Aspiring happy warrior and eternal student.
           </p>
         </section>
 
